@@ -15,13 +15,36 @@
 
 
 <template>
-    <lightning-card title="Case Details">
+    <lightning-card title="Case Details" icon-name="standard:case">
         <template if:true={caseDetails}>
-            <p><strong>Case Number:</strong> {caseDetails.CaseNumber}</p>
-            <p><strong>Subject:</strong> {caseDetails.Subject}</p>
-            <p><strong>Priority:</strong> {caseDetails.Priority}</p>
-            <p><strong>Status:</strong> {caseDetails.Status}</p>
-            <p><strong>SLA Due Date:</strong> {caseDetails.SLA_Due_Date__c}</p>
+            <div class="slds-box slds-theme_default slds-m-around_medium">
+                <div class="slds-grid slds-wrap slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <p class="slds-text-title_bold">Case Number:</p>
+                        <lightning-formatted-url 
+                            value={caseUrl} 
+                            label={caseDetails.CaseNumber} 
+                            target="_blank">
+                        </lightning-formatted-url>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <p class="slds-text-title_bold">Subject:</p>
+                        <p>{caseDetails.Subject}</p>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <p class="slds-text-title_bold">Priority:</p>
+                        <p>{caseDetails.Priority}</p>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <p class="slds-text-title_bold">Status:</p>
+                        <p>{caseDetails.Status}</p>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <p class="slds-text-title_bold">SLA Due Date:</p>
+                        <p>{caseDetails.SLA_Due_Date__c}</p>
+                    </div>
+                </div>
+            </div>
         </template>
         <template if:true={error}>
             <p class="slds-text-color_error">{error}</p>
