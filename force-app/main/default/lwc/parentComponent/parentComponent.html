@@ -1,0 +1,6 @@
+<template>
+    <c-case-dashboard oncaseview={handleCaseView}></c-case-dashboard>
+    <template if:true={selectedCaseId}>
+        <c-case-details case-id={selectedCaseId}></c-case-details>
+    </template>
+</template>

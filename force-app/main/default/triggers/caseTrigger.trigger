@@ -10,3 +10,5 @@ trigger caseTrigger on Case (before insert, before update) {
         caseTriggerHandler.sendSLAViolationNotifications(Trigger.new);
     }
 }
+
+

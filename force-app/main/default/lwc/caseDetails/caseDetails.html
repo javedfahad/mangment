@@ -1,0 +1,30 @@
+<!-- <template>
+    <lightning-card title="Case Details">
+        <template if:true={caseDetails}>
+            <p><strong>Case Number:</strong> {caseDetails.CaseNumber}</p>
+            <p><strong>Subject:</strong> {caseDetails.Subject}</p>
+            <p><strong>Priority:</strong> {caseDetails.Priority}</p>
+            <p><strong>Status:</strong> {caseDetails.Status}</p>
+            <p><strong>SLA Due Date:</strong> {caseDetails.SLA_Due_Date__c}</p>
+        </template>
+        <template if:true={error}>
+            <p class="slds-text-color_error">{error}</p>
+        </template>
+    </lightning-card>
+</template> -->
+
+
+<template>
+    <lightning-card title="Case Details">
+        <template if:true={caseDetails}>
+            <p><strong>Case Number:</strong> {caseDetails.CaseNumber}</p>
+            <p><strong>Subject:</strong> {caseDetails.Subject}</p>
+            <p><strong>Priority:</strong> {caseDetails.Priority}</p>
+            <p><strong>Status:</strong> {caseDetails.Status}</p>
+            <p><strong>SLA Due Date:</strong> {caseDetails.SLA_Due_Date__c}</p>
+        </template>
+        <template if:true={error}>
+            <p class="slds-text-color_error">{error}</p>
+        </template>
+    </lightning-card>
+</template>
