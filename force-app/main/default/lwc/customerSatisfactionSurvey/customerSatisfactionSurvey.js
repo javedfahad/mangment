@@ -2,6 +2,7 @@ import { LightningElement, track } from 'lwc';
 import submitSurvey from '@salesforce/apex/CustomerSatisfactionApexController.submitSurvey';
 
 export default class CustomerSatisfaction extends LightningElement {
+    @track name = '';
     @track rating = '';
     @track comments = '';
 
@@ -13,6 +14,10 @@ export default class CustomerSatisfaction extends LightningElement {
         { label: '5 - Excellent', value: '5' }
     ];
 
+    handleNameChange(event) {
+        this.name = event.detail.value;
+    }
+
     handleRatingChange(event) {
         this.rating = event.detail.value;
     }
@@ -22,9 +27,10 @@ export default class CustomerSatisfaction extends LightningElement {
     }
 
     handleSubmit() {
-        submitSurvey({ rating: this.rating, comments: this.comments })
+        submitSurvey({ name: this.name, rating: this.rating, comments: this.comments })
             .then(() => {
                 // Handle successful submission
+                this.name = '';
                 this.rating = '';
                 this.comments = '';
                 // Show success message or redirect
